@@ -1,10 +1,7 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import BlogViewSet
-
-router = DefaultRouter()
-router.register(r'blogs', BlogViewSet)
+# blog/urls.py
+from django.urls import path
+from .views import BlogList
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('blogs/', BlogList.as_view(), name='blog-list'),
 ]
